@@ -1,6 +1,7 @@
 #pragma once
 #include <SDL/SDL.h>
 #include <GL/eglew.h>
+#include "sprite.h"
 
 enum class GameState {
 	PLAY, EXIT
@@ -9,6 +10,7 @@ enum class GameState {
 class MainGame
 {
 private:
+	Sprite sprite;
 	int width;
 	int height;
 	SDL_Window* window;
