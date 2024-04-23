@@ -25,7 +25,7 @@ void MainGame::init()
 		// todo falta validar estados del glew
 	}
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // color de fondo para la ventana
 	initShaders();
 }
 
@@ -36,8 +36,21 @@ void MainGame::draw()
 	program.use();
 	GLuint timeLocation = program.getUniformLocation("time");
 	glUniform1f(timeLocation, time);
-	time += 0.02;
+	time += 0.002;
+	timeGame += 0.0005;
 	sprite.Draw();
+	if (timeGame>1)
+	{
+		sprite1.Draw();
+	}
+	if (timeGame > 2)
+	{
+		sprite2.Draw();
+	}
+	if (timeGame > 3)
+	{
+		sprite3.Draw();
+	}	
 	program.unuse();
 	SDL_GL_SwapWindow(window);
 }
@@ -45,7 +58,10 @@ void MainGame::draw()
 void MainGame::run()
 {
 	init();
-	sprite.Init(-1,-1,1,1);
+	sprite.Init(1, 1, -1, -1);
+	sprite1.Init(-1, -1, 1, 1);
+	sprite2.Init(1, -1, 1, -1);
+	sprite3.Init(-1, 1, -1, 1);
 	update();
 }
 

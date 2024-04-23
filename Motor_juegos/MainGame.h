@@ -12,6 +12,9 @@ class MainGame
 {
 private:
 	Sprite sprite;
+	Sprite sprite1;
+	Sprite sprite2;
+	Sprite sprite3;
 	int width;
 	int height;
 	SDL_Window* window;
@@ -20,6 +23,7 @@ private:
 	GLS_Program program;
 	void initShaders();
 	float time = 0;
+	float timeGame = 0;
 public:
 	MainGame();
 	~MainGame();
