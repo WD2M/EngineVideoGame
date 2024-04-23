@@ -21,8 +21,10 @@ private:
 	void init();
 	void processInput();
 	GLS_Program program;
+	GLS_Program program1;
 	void initShaders();
 	float time = 0;
+	float time1 = 0;
 	float timeGame = 0;
 public:
 	MainGame();

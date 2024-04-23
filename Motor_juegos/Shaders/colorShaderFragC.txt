@@ -14,9 +14,9 @@ void main(){
 	//color = vec3(1.0,0.0,1.0);
 	//color=fragmentColor;
 	color= fragmentColor + vec4(
-	1.0*(cos(time)+1.0)*0.5,
-	1.0*(cos(time+2.0)+1.0)*0.5,
-	1.0*(cos(time+1.0)+1.0)*0.5,
+	1.0*(tan(time)+1.0)*0.5,
+	1.0*(tan(time+2.0)+1.0)*0.5,
+	1.0*(tan(time+1.0)+1.0)*0.5,
 	0
 	);
 }
