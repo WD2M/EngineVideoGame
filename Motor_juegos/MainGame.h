@@ -2,6 +2,7 @@
 #include <SDL/SDL.h>
 #include <GL/eglew.h>
 #include "sprite.h"
+#include "window.h"
 
 enum class GameState {
 	PLAY, EXIT
@@ -13,7 +14,7 @@ private:
 	Sprite sprite;
 	int width;
 	int height;
-	SDL_Window* window;
+	Window* window;
 	void init();
 	void processInput();
 public:
