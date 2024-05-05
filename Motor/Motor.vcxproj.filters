@@ -33,14 +33,10 @@
     <ClCompile Include="IOManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-<<<<<<< Updated upstream:Motor_juegos/Motor_juegos.vcxproj.filters
-    <ClCompile Include="PicoPNG.cpp">
-=======
     <ClCompile Include="picoPNG.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GLTexture.cpp">
->>>>>>> Stashed changes:Motor/Motor.vcxproj.filters
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ImageLoader.cpp">
@@ -78,19 +74,11 @@
     <ClInclude Include="IOManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-<<<<<<< Updated upstream:Motor_juegos/Motor_juegos.vcxproj.filters
-    <ClInclude Include="PicoPNG.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GLTexture.h">
-      <Filter>Source Files</Filter>
-=======
     <ClInclude Include="picoPNG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GLTexture.h">
       <Filter>Header Files</Filter>
->>>>>>> Stashed changes:Motor/Motor.vcxproj.filters
     </ClInclude>
     <ClInclude Include="ImageLoader.h">
       <Filter>Header Files</Filter>
@@ -101,12 +89,9 @@
     <ClInclude Include="ResourceManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-<<<<<<< Updated upstream:Motor_juegos/Motor_juegos.vcxproj.filters
-=======
     <ClInclude Include="Vertex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
->>>>>>> Stashed changes:Motor/Motor.vcxproj.filters
     <ClInclude Include="Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -29,10 +29,10 @@ MainGame::~MainGame()
 void MainGame::run()
 {
 	init();
-	sprite.init(-1, -1, 1, 1, "images/cat.png");
-	sprite1.init(-1, -1, 1, 1, "images/cat.png");
-	sprite2.init(1, -1, 1, -1, "images/cat.png");
-	sprite3.init(-1, 1, -1, 1, "images/cat.png");
+	sprite.init(-1, -1, 1, 1, "images/Bleach.png");
+	sprite1.init(-1, 1, 1, -1, "images/Bleach1.png");
+	sprite2.init(1, 1, -1, -1, "images/Bleach.png");
+	sprite3.init(1, -1, -1, 1, "images/Bleach1.png");
 	update();
 }
 
@@ -47,13 +47,12 @@ void MainGame::draw()
 	timeGame += 0.0005;
 	sprite.draw();
 	
-	cout << timeGame << endl;
-	//if (timeGame > 1)
+	if (timeGame > 1)
 	{
 		sprite1.draw();
 		program.unuse(); // desactivacion del primer shader
 	}
-	//if (timeGame > 2)
+	if (timeGame > 2)
 	{
 		program1.use(); // uso del segundo shader
 		GLuint timeLocation = program1.getUniformLocation("time");
@@ -61,7 +60,7 @@ void MainGame::draw()
 		time1 += 0.002;
 		sprite2.draw();
 	}
-	//if (timeGame > 3)
+	if (timeGame > 3)
 	{
 		sprite3.draw();
 		program1.unuse(); // desactivacion del segundo shader
@@ -87,8 +86,8 @@ void MainGame::processInput()
 			gameState = GameState::EXIT;
 			break;
 		case SDL_MOUSEMOTION:
-			cout << " Posicion en X " << event.motion.x 
-			<< " Posicion en Y " << event.motion.y << endl;
+			//cout << " Posicion en X " << event.motion.x 
+			//<< " Posicion en Y " << event.motion.y << endl;
 			break;
 		}
 	}
