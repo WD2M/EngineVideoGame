@@ -132,11 +132,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-=======
     <ClCompile Include="Camera2D.cpp" />
     <ClCompile Include="Error.cpp" />
->>>>>>> Stashed changes
     <ClCompile Include="GLS_Program.cpp" />
     <ClCompile Include="ImageLoader.cpp" />
     <ClCompile Include="InputManager.cpp" />
@@ -150,11 +147,8 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-=======
     <ClInclude Include="Camera2D.h" />
     <ClInclude Include="Error.h" />
->>>>>>> Stashed changes
     <ClInclude Include="GLS_Program.h" />
     <ClInclude Include="GLTexture.h" />
     <ClInclude Include="ImageLoader.h" />

@@ -28,23 +28,22 @@ void MainGame::init()
 		// todo falta validar estados del glew
 	}
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-<<<<<<< Updated upstream
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-=======
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // color de fondo para la ventana*/
 	initShaders();
->>>>>>> Stashed changes
 }
 
 void MainGame::draw()
 {
 	glClearDepth(1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+	program.use(); // uso del primer shader
+	GLuint timeLocation = program.getUniformLocation("time");
+	glUniform1f(timeLocation, time);
+	time += 0.002;
+	timeGame += 0.0005;
 	sprite.Draw();
-<<<<<<< Updated upstream
-	SDL_GL_SwapWindow(window);
-=======
-	
+
 	if (timeGame>1)
 	{
 		sprite1.Draw();
@@ -65,20 +64,15 @@ void MainGame::draw()
 	}	
 	window->swapWindows();
 	//SDL_GL_SwapWindow(window);
->>>>>>> Stashed changes
 }
 
 void MainGame::run()
 {
 	init();
-<<<<<<< Updated upstream
-	sprite.Init(-1,-1,1,1);
-=======
 	sprite.Init(1, 1, -1, -1,"Images/Bleach.png"); // pos de cada recuadro 
 	sprite1.Init(-1, -1, 1, 1, "Images/Bleach.png");
 	sprite2.Init(1, -1, 1, -1, "Images/Bleach.png");
 	sprite3.Init(-1, 1, -1, 1, "Images/Bleach.png");
->>>>>>> Stashed changes
 	update();
 }
 
@@ -111,8 +105,6 @@ void MainGame::processInput()
 	}
 }
 
-<<<<<<< Updated upstream
-=======
 void MainGame::initShaders()
 {
 	program.compileShaders("Shaders/colorShaderVert.txt", "Shaders/colorShaderFrag.txt"); // busqueda y compilacion de cada shader
@@ -128,9 +120,6 @@ void MainGame::initShaders()
 	program1.linkShader();
 }
 
->>>>>>> Stashed changes
 MainGame::~MainGame()
 {
 }
-
-

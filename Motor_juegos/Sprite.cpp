@@ -46,8 +46,6 @@ void Sprite::Init(float x, float y, float width, float height, string texturePat
 	vertexData[4].SetPosition(x + height, y);
 	vertexData[5].SetPosition(x + height, y + width);
 
-<<<<<<< Updated upstream
-=======
 	for (int i = 0; i < 6; i++)
 	{
 		//	red green blue alpha
@@ -63,7 +61,6 @@ void Sprite::Init(float x, float y, float width, float height, string texturePat
 	vertexData[4].setUV(1.0f, 0.0f);
 	vertexData[5].setUV(1.0f, 1.0f);
 
->>>>>>> Stashed changes
 	glBindBuffer(GL_ARRAY_BUFFER, vboID);
 	glBufferData(GL_ARRAY_BUFFER,
 		sizeof(vertexData), vertexData, GL_STATIC_DRAW);
