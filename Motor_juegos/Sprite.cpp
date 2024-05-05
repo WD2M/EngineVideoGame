@@ -45,6 +45,14 @@ void Sprite::Init(float x, float y, float width, float height)
 	vertexData[4].SetPosition(x + height, y);
 	vertexData[5].SetPosition(x + height, y + width);
 
+	for (int i = 0; i < 6; i++)
+	{
+		//	red green blue alpha
+		vertexData[i].SetColor(255, 0, 0, 255);
+	}
+	vertexData[1].SetColor(0, 0, 255, 255);
+	vertexData[4].SetColor(0, 255, 0, 255);
+
 	glBindBuffer(GL_ARRAY_BUFFER, vboID);
 	glBufferData(GL_ARRAY_BUFFER,
 		sizeof(vertexData), vertexData, GL_STATIC_DRAW);
