@@ -14,7 +14,10 @@ MainGame::MainGame()
 void MainGame::init()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
-	window = SDL_CreateWindow("Motor WD2M", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+	window = new Window();
+	window->create("Motor WD2M", width, height, 0);
+	//forma sin el archivo window
+	/*window = SDL_CreateWindow("Motor WD2M", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 								width, height, SDL_WINDOW_OPENGL);
 
 	// todo validar si hay un error 
@@ -25,7 +28,8 @@ void MainGame::init()
 		// todo falta validar estados del glew
 	}
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // color de fondo para la ventana
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // color de fondo para la ventana*/
 	initShaders();
 }
 
@@ -39,7 +43,7 @@ void MainGame::draw()
 	time += 0.002;
 	timeGame += 0.0005;
 	sprite.Draw();
-	
+
 	if (timeGame>1)
 	{
 		sprite1.Draw();
@@ -58,16 +62,17 @@ void MainGame::draw()
 		sprite3.Draw();
 		program1.unuse(); // desactivacion del segundo shader
 	}	
-	SDL_GL_SwapWindow(window);
+	window->swapWindows();
+	//SDL_GL_SwapWindow(window);
 }
 
 void MainGame::run()
 {
 	init();
-	sprite.Init(1, 1, -1, -1); // pos de cada recuadro 
-	sprite1.Init(-1, -1, 1, 1);
-	sprite2.Init(1, -1, 1, -1);
-	sprite3.Init(-1, 1, -1, 1);
+	sprite.Init(1, 1, -1, -1,"Images/Bleach.png"); // pos de cada recuadro 
+	sprite1.Init(-1, -1, 1, 1, "Images/Bleach.png");
+	sprite2.Init(1, -1, 1, -1, "Images/Bleach.png");
+	sprite3.Init(-1, 1, -1, 1, "Images/Bleach.png");
 	update();
 }
 
@@ -105,11 +110,13 @@ void MainGame::initShaders()
 	program.compileShaders("Shaders/colorShaderVert.txt", "Shaders/colorShaderFrag.txt"); // busqueda y compilacion de cada shader
 	program.addAtribute("vertexPoistion");
 	program.addAtribute("vertexColor");
+	program.addAtribute("vertexUV");
 	program.linkShader();
 
 	program1.compileShaders("Shaders/colorShaderVertC.txt", "Shaders/colorShaderFragC.txt");
 	program1.addAtribute("vertexPoistion");
 	program1.addAtribute("vertexColor");
+	program1.addAtribute("vertexUV");
 	program1.linkShader();
 }
 
