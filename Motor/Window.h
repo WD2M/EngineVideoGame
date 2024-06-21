@@ -2,12 +2,11 @@
 #include <SDL/SDL.h>
 #include <GL/glew.h>
 #include <string>
-
 using namespace std;
-enum WindowsFlags {
+enum WindowFlags {
 	INVISIBLE = 0x1,
 	FULLSCREEN = 0x2,
-	BORDERLESS = 0x3
+	BORDERLESS = 0x4
 };
 
 class Window
@@ -15,19 +14,19 @@ class Window
 private:
 	SDL_Window* window;
 	int screenWidth;
-	int screenHeigth;
+	int screenHeight;
 public:
 	Window();
 	~Window();
-	void swapWindows();
-	int create(string windowName, int screenWidth, int screenHeigth, int currentFlags);
+	int create(string windowName,
+		int screenWidth, int screenHeight, int currentFlags);
+	void swapWindow();
 	int getScreenWidth() {
-		
 		return screenWidth;
 	}
-	int getScreenHeigth() {
-
-		return screenHeigth;
+	int getScreenHeight() {
+		return screenHeight;
 	}
 
 };
+

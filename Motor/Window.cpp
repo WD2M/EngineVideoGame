@@ -1,5 +1,6 @@
 #include "Window.h"
-#include"Error.h"
+#include "Error.h"
+
 Window::Window()
 {
 }
@@ -8,12 +9,7 @@ Window::~Window()
 {
 }
 
-void Window::swapWindows()
-{
-	SDL_GL_SwapWindow(window);
-}
-
-int Window::create(string windowName, int screenWidth, int screenHeigth, int currentFlags)
+int Window::create(string windowName, int screenWidth, int screenHeight, int currentFlags)
 {
 	Uint32 flags = SDL_WINDOW_OPENGL;
 	if (currentFlags & INVISIBLE) {
@@ -27,7 +23,7 @@ int Window::create(string windowName, int screenWidth, int screenHeigth, int cur
 	}
 	window = SDL_CreateWindow(windowName.c_str(),
 		SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-		screenWidth, screenHeigth, flags
+		screenWidth, screenHeight, flags
 	);
 	if (window == nullptr) {
 		fatalError("No se puede inicializar la ventana");
@@ -39,4 +35,9 @@ int Window::create(string windowName, int screenWidth, int screenHeigth, int cur
 	}
 	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 	return 0;
+}
+
+void Window::swapWindow()
+{
+	SDL_GL_SwapWindow(window);
 }

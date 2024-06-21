@@ -5,5 +5,6 @@ using namespace std;
 class ImageLoader
 {
 public:
-	static GLTexture loadPng(string filePath); 
+	static GLTexture loadPng(string filePath);
 };
+
