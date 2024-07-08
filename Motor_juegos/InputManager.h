@@ -7,6 +7,10 @@ class InputManager
 {
 private:
 	unordered_map<unsigned int, bool> keys;
+<<<<<<< Updated upstream:Motor_juegos/InputManager.h
+=======
+	unordered_map<unsigned int, bool> previousKeys;
+>>>>>>> Stashed changes:Motor/InputManager.h
 	glm::vec2 mouseCoords;
 public:
 	InputManager();
