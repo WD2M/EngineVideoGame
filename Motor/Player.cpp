@@ -56,12 +56,14 @@ void Player::update(vector<string>& levelData, vector<Human*>& humans, vector<Zo
 		valDirection = 1;
 		direction = RIGHT;
 	}
-	if(inputmanager->isKeyDown(SDLK_d) || inputmanager->isKeyDown(SDLK_a)
-		|| inputmanager->isKeyDown(SDLK_s) || inputmanager->isKeyDown(SDLK_w))
+
+	if (inputmanager->isKeyDown(SDLK_w) || inputmanager->isKeyDown(SDLK_s)
+		|| inputmanager->isKeyDown(SDLK_a) || inputmanager->isKeyDown(SDLK_d))
 	{
 		animation = "Images/Caballero1.png";
 	}
-	else {
+	else
+	{
 		animation = "Images/CaballeroIdle.png";
 	}
 

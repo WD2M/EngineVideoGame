@@ -113,6 +113,8 @@ void MainGame::hackChangeLvl() {
 		currentLevel = --currentLevel % levels.size();
 		passLevel();
 	}
+
+	
 }
 
 void MainGame::createBullet(glm::vec2 direction) {
